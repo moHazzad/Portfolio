@@ -3,6 +3,7 @@ import hazzadImg from "../../../assets/hazzad.png";
 import { FaArrowRight } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import MagnaticButton from "../Home/MagnaticButton";
+import Button from "../Buttons/Button";
 
 const Contect = () => {
   const {
@@ -26,7 +27,7 @@ const Contect = () => {
           <img className="h-20 w-20 rounded-full" src={hazzadImg} alt="" />
           {/* <BsArrowDownRight/> */}
           <div>
-            <FaArrowRight className="rotate-45 text-3xl" />
+            <FaArrowRight className="rotate-90 text-3xl" />
           </div>
         </div>
       </div>
@@ -44,7 +45,7 @@ const Contect = () => {
               {...register("Name", { required: true })}
               className="bg-transparent font-medium py-6"
             />
-            <div className="divider my-3"></div>
+            <div className="divider my-2"></div>
 
             {/* include validation with required or other standard HTML validation rules */}
             <input
@@ -53,7 +54,7 @@ const Contect = () => {
               {...register("Email", { required: true })}
               className="bg-transparent font-medium py-6"
             />
-            <div className="divider my-3"></div>
+            <div className="divider my-2"></div>
 
             <textarea
               placeholder="Message For me"
@@ -61,7 +62,7 @@ const Contect = () => {
               {...register("text", { required: true })}
               className="bg-transparent font-medium py-6"
             />
-            <div className="divider my-3"></div>
+            <div className="divider my-2"></div>
 
             {/* errors will return when field validation fails  */}
             {(errors.Name && <span>This field is required</span>) ||
@@ -72,7 +73,7 @@ const Contect = () => {
               <div className="divider "></div>
               <div className="absolute right-10 -top-10 z-10 cursor-pointer">
                 <button type="submit">
-                  <MagnaticButton buttonName={"Send"} />
+                  <Button buttonName={"Send"} />
                 </button>
               </div>
             </div>

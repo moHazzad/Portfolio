@@ -3,7 +3,7 @@ import ColorButton from './ColorButton'
 
 const TextGlove = () => {
   return (
-    <section className='w-[85%] mx-auto py-20'>
+    <section className='w-[85%] mx-auto md:pb-18 pb-15 pt-20'>
         <div className='flex items-center '>
             {/* <img className='h-20 w-20 rounded-full' src={hazzadImg} alt="" /> */}
             <div className='md:py-10 '>

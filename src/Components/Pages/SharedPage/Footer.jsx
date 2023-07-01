@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import WorkTogether from "../Home/WorkTogether";
+import AOS from 'aos';
 
 const Footer = () => {
   const date = new Date();
+
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+    AOS.refresh()
+  }, []);
   // console.log(date);
   return ( 
     <> 
@@ -10,8 +21,9 @@ const Footer = () => {
     <section className="w-[90%] mx-auto ">
       <div className="flex flex-col-reverse md:flex-row justify-between md:items-center">
 
-        <div className="flex gap-8 justify-between">
-          <div>
+        <div data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom" className="flex gap-8 justify-between">
+          <div >
             <p className="uppercase">Version</p>
             <p className="uppercase text-sm md:text-md text-white">
               2023 <span>&#169;</span> edition
@@ -25,7 +37,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div >
+        <div data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom">
           <p className="uppercase">Socials </p>
           <div className="flex gap-4 md:py-5 py-3 text-sm md:text-md">
             <a

@@ -10,6 +10,7 @@ import Home from './Components/Pages/Home/Home.jsx';
 import Contect from './Components/Pages/Contact/Contect.jsx';
 import AboutMe from './Components/Pages/About/AboutMe.jsx';
 import Work from './Components/Pages/Work/Work.jsx';
+import 'aos/dist/aos.css';
 
 const router = createBrowserRouter([
   {

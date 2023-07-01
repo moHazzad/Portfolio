@@ -1,16 +1,7 @@
 import React, { useEffect } from "react";
-import Container from "@mui/material/Container";
-import MenuIcon from "@mui/icons-material/Menu";
-import {
-  AppBar,
-  Box,
-  Button,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@mui/material";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+// import resume from '../../../assets/Resume.pdf'
 
 const NavBar = () => {
   useEffect(() => {
@@ -34,6 +25,20 @@ const NavBar = () => {
       });
     });
   }, []);
+
+
+  // const handleDownload = () => {
+    
+  //   const pdfUrl = resume ;
+  //   const link = document.createElement('a');
+  //   link.href = pdfUrl;
+  //   link.download = 'Resume'; // Set the desired filename for the downloaded file
+  //   link.target = '_blank';
+  //   link.style.display = 'none';
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
   
   return (
     <>
@@ -45,28 +50,38 @@ const NavBar = () => {
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-        </li>
-        <li><a>Item 3</a></li>
+      <li><NavLink to={'/work'} className={({ isActive }) => (isActive ? 'blackbtn btnn' : ' btnn')}>
+              <span className="">work</span>
+            </NavLink></li>
+      <li tabIndex={0}>
+      <NavLink to={'/aboutme'}  className={({ isActive }) => (isActive ? 'blackbtn btnn' : ' btnn')}>
+              <span>About</span>
+            </NavLink>
+      </li>
+      <li><NavLink to={'/contact'} className={({ isActive }) => (isActive ? 'blackbtn btnn' : ' btnn')}>
+              <span>Contact</span>
+            </NavLink></li>
       </ul>
     </div>
     <Link to={'/'} className="btnn   text-xl"><span style={{ fontSize: "0.75rem",color: "#F8F8F8" }}>Code by Hazzad</span></Link>
   </div>
   <div className="navbar-end hidden lg:flex">
     <ul className=" menu-horizontal px-1">
-      <li><Link to={'/work'} color="#F8F8F8" className="btnn">
+      <li><NavLink to={'/work'} color="#F8F8F8"  className={({ isActive }) => (isActive ? 'blackbtn btnn' : ' btnn')}>
               <span className="">work</span>
-            </Link></li>
+            </NavLink></li>
       <li tabIndex={0}>
-      <Link to={'/aboutme'} color="#F8F8F8" className="btnn">
+      <NavLink to={'/aboutme'}   className={({ isActive }) => (isActive ? 'blackbtn btnn' : ' btnn')}>
               <span>About</span>
-            </Link>
+            </NavLink>
       </li>
-      <li><Link to={'/contact'} color="" className="btnn" style={{color:'#F8F8F8'}}>
-              <span>Contact</span>
-            </Link></li>
+      <li><NavLink to={'/contact'} color=""  className={({ isActive }) => (isActive ? 'blackbtn btnn' : ' btnn')}>
+              <span >Contact</span>
+            </NavLink></li>
+      {/* <li><NavLink  onClick={handleDownload}  className={({ isActive }) => (isActive ? ' btnn' : ' btnn')}>
+              <span  >Resume</span>
+            </NavLink></li> */}
+            {/* <a href={resume} download={"resume"} >Resume </a> */}
     </ul>
   </div>
   
@@ -75,39 +90,7 @@ const NavBar = () => {
 
 
 
-      {/* <Box sx={{ flexGrow: 1, }}>
-        <AppBar
-          position="static"
-          sx={{ bgcolor: "transparent",   position:"absolute",zIndex:10 }}
-        >
-          <Toolbar sx={{color: '#F8F8F8'}}>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              <a className="btn">
-                <span style={{ fontSize: "0.75rem",color: "#F8F8F8" }}>Code by Hazzad</span>
-                
-              </a>
-            </Typography>
-            <a color="#F8F8F8" className="btn">
-              <span className="">work</span>
-            </a>
-            <a color="#F8F8F8" className="btn">
-              <span>About</span>
-            </a>
-            <a color="" className="btn" style={{color:'#F8F8F8'}}>
-              <span>Contact</span>
-            </a>
-          </Toolbar>
-        </AppBar>
-      </Box> */}
+    
     </>
   );
 };
